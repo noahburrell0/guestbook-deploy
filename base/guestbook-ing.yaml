@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    ingress.kubernetes.io/force-ssl-redirect: 'true'
+    kubernetes.io/tls-acme: 'true'
+  name: guestbook
+spec:
+  rules:
+    - host: REPLACEME
+      http:
+        paths:
+          - backend:
+              service:
+                name: guestbook
+                port:
+                  number: 3000
+            path: /
+            pathType: Prefix
+  tls:
+    - hosts:
+        - REPLACEME
+      secretName: guestbook-tls
