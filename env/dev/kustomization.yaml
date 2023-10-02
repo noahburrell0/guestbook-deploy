@@ -17,12 +17,12 @@ patches:
     - op: replace
       path: /spec/tls/0/hosts/0
       value: guestbook-dev.demo.akuity.io
-- target:
-    version: v1
-    group: apps
-    kind: Deployment
-    name: guestbook
-  patch: |-
-    - op: replace
-      path: /metadata/annotations/argocd.argoproj.io~1hook
-      value: PostSync
+# - target:
+#     version: v1
+#     group: apps
+#     kind: Deployment
+#     name: guestbook
+#   patch: |-
+#     - op: replace
+#       path: /metadata/annotations/argocd.argoproj.io~1hook
+#       value: PostSync
