@@ -14,7 +14,7 @@ spec:
         app: guestbook
     spec:
       containers:
-      - image: ghcr.io/akuity/guestbook:latest
+      - image: registry.burrell.tech/testing/guestbook:latest
         name: guestbook
         ports:
         - containerPort: 3000
